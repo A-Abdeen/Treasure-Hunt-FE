@@ -18,3 +18,17 @@ export const fetchThings = () => {
     }
   };
 };
+
+export const fetchTreasures = () => {
+  return async (dispatch) => {
+    try {
+      const response = await instance.get("/treasures");
+      dispatch({
+        type: types.FETCH_TREASURES,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.error();
+    }
+  };
+};

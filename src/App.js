@@ -6,6 +6,8 @@ import Home from "./components/Home.js";
 import NavBar from "./components/NavBar";
 import TreasureList from "./components/treasure/TreasureList";
 import ThingList from "./components/thing/ThingList";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 const theme = {
   mainColor: "#000000",
@@ -19,6 +21,12 @@ function App() {
       <GlobalStyle />
       <NavBar />
       <Switch>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/signin">
+          <SignIn />
+        </Route>
         <Route path="/things">
           <ThingList />
         </Route>
