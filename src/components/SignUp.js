@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 
 import { useState } from "react";
 
+import PasswordMask from "react-password-mask";
+
 const SignUp = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -37,7 +39,14 @@ const SignUp = () => {
           className="form-control"
         />
       </div>
-      <div className="mb-3">
+      <PasswordMask
+        name="password"
+        placeholder="Enter password"
+        value={user.password}
+        onChange={handleChange}
+      />
+
+      {/* <div className="mb-3">
         <label className="form-label">password</label>
         <input
           type="password"
@@ -46,7 +55,8 @@ const SignUp = () => {
           name="password"
           className="form-control"
         />
-      </div>
+      </div> */}
+
       <div className="mb-3">
         <label className="form-label">Email</label>
         <input

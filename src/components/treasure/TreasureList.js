@@ -4,8 +4,8 @@ import { Redirect } from "react-router";
 import Treasure from "./Treasure";
 
 const TreasureList = () => {
-  const user = useSelector((state) => state.authReducer.user);
   const treasures = useSelector((state) => state.thingReducer.treasures);
+  const user = useSelector((state) => state.authReducer.user);
   if (user) {
     const treasureList = treasures.map((treasure) => (
       <Treasure key={treasure.id} treasure={treasure} />
@@ -17,7 +17,7 @@ const TreasureList = () => {
       </div>
     );
   } else {
-    return <Redirect to="/signin" />;
+    return <Redirect to="/" />;
   }
 };
 

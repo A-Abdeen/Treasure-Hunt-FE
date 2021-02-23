@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router";
 import { signout } from "../store/actions/authActions.js";
 // Styling
 import { NavStyled, NavYard } from "../styles.js";
@@ -8,6 +9,11 @@ import { NavStyled, NavYard } from "../styles.js";
 const NavBar = (props) => {
   const user = useSelector((state) => state.authReducer.user);
   const dispatch = useDispatch();
+
+  const hamza = (signout) => {
+    dispatch(signout());
+    <Redirect to="/" />;
+  };
   return (
     <NavStyled className="navbar navbar-expand">
       {/* <Logo className="navbar-brand" to="/">
@@ -27,11 +33,7 @@ const NavBar = (props) => {
           ) : (
             ""
           )}
-          {user ? (
-            <button onClick={() => dispatch(signout())}>SignOut</button>
-          ) : (
-            ""
-          )}
+          {user ? <button onClick={() => hamza(signout)}>SignOut</button> : ""}
         </div>
       </div>
     </NavStyled>

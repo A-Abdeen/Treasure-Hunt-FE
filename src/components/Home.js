@@ -1,10 +1,5 @@
-import { Redirect } from "react-router";
 import { Title, Description, HomeButton } from "../styles";
-import ThingList from "./thing/ThingList";
-import TreasureList from "./treasure/TreasureList";
-import { useSelector } from "react-redux";
 const Home = () => {
-  const user = useSelector((state) => state.authReducer.user);
   return (
     <>
       <Title>TREASURE HUNT</Title>

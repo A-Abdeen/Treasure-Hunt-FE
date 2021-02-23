@@ -1,5 +1,4 @@
 import decode from "jwt-decode";
-import { Redirect } from "react-router";
 import instance from "./instance";
 
 // ACTION TYPES
@@ -37,14 +36,16 @@ export const signIn = (userData, history) => async (dispatch) => {
 
 export const signout = () => {
   localStorage.removeItem("myToken");
-  return (
-    {
-      type: types.SET_USER,
-      payload: { userData: null },
-    },
-    (<Redirect to="/" />)
-  );
+  return {
+    type: types.SET_USER,
+    payload: { userData: null },
+  };
 };
+
+// return (
+//   { type: types.SET_USER, payload: { userData: null } }, (<Redirect to="/" />)
+// );
+// };
 
 const setUser = (token) => {
   localStorage.setItem("myToken", token);

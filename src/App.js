@@ -11,7 +11,7 @@ import SignUp from "./components/SignUp";
 
 const theme = {
   mainColor: "#000000",
-  backgroundColor: "#4f3a12",
+  backgroundColor: "#c0c0c0",
   rust: "#FFFFFF",
 };
 
