@@ -1,0 +1,2 @@
+export const FETCH_THINGS = "FETCH_THINGS";
+export const FETCH_TREASURES = "FETCH_TREASURES";
